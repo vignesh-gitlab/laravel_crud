@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/contact-data', [ContactController::class, 'getContactData']);
+Route::get('/contact/getContact/{id}', [ContactController::class, 'getContact']);
+Route::delete('/contact/delete/{id}', [ContactController::class, 'deleteContact']);
+
 Route::get('/contact', [ContactController::class, 'create']);
 Route::post('/contact', [ContactController::class, 'store']);
 
